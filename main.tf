@@ -8,6 +8,11 @@ variable "server_port" {
         default = 8080
 }
 
+output "public_ip" {
+	value = aws_instance.mm-single-web.public_ip
+	description = "The public IP address of the web server"
+}
+
 resource "aws_security_group" "instance" {
         name = "terraform-example-instance"
 
